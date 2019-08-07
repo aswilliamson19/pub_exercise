@@ -35,7 +35,7 @@ class CustomerTest < MiniTest::Test
   end
 
   def test_age
-    assert_equal(35, @customer.age)
+    assert_equal(35, @customer.age())
   end
 
   def test_if_customer_gets_drunk

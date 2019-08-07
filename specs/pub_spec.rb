@@ -7,7 +7,7 @@ require_relative('../drink')
 class PubTest < MiniTest::Test
 
   def setup
-    @pub = Pub.new('Codeclan Arms', {@drink1, @drink2, @drink3}, 100)
+    @pub = Pub.new('Codeclan Arms', [@drink1, @drink2, @drink3], 100)
     @customer1 = Customer.new('Bob', 20, 5, 17)
     @customer2 = Customer.new('Lisa', 10, 3, 21)
     @customer3 = Customer.new('Steve', 5, 15, 55)
@@ -48,7 +48,10 @@ class PubTest < MiniTest::Test
 
   def test_check_customer_drunkenness__not_served
     assert_equal(false, @pub.customer_drunkenness(@customer3))
+  end
 
+  def test_stock_count
+    assert_equal(0, @pub.stock_count(@drink1))
   end
 
 end

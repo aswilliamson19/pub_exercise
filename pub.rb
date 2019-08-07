@@ -3,7 +3,7 @@ class Pub
   attr_reader :name, :stock, :money_in_till
 
   def initialize(name, stock, money_in_till)
-    @stock = {}
+    @stock = Hash.new(0)
     @name = name
     @money_in_till = money_in_till
 end
@@ -27,6 +27,10 @@ end
     else
       return false
     end
+  end
+
+  def stock_count(drink)
+    return @stock[drink]
   end
 
 end
